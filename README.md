@@ -1,6 +1,5 @@
 # 基于html开发的在线网址导航
 
-[English Doc](./Readme-en.md)
 
 ## 部署步骤
 
@@ -9,7 +8,7 @@
 
 ## 在线预览
 
-https://zhijiantv.github.io/zhijian/
+https://zhijiantv.github.io/
 
 
 ## 二次开发
