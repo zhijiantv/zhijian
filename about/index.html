@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f9f9f9" />
-    <title>指尖看世界 - 网址导航</title>
+    <title>关于我们 - 指尖看世界</title>
     <link rel="shortcut icon" href="../assets/images/favicon.png" />
     <meta name="keywords" content="免费资源软件聚合网" />
     <meta name="description" content="影视软件, 音乐软件、阅读软件、tvbox接口、在线追剧、小说接口等" />
@@ -27,6 +27,7 @@
     <link rel="stylesheet" id="fortawesome-css" href="./assets/fontawesome-5.15.4/css/all.min.css" type="text/css" />
     <script type="text/javascript" src="./assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
     <script type="text/javascript" src="./assets/js/content-search.js"  id="content-search-js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
 
@@ -35,46 +36,182 @@
         !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"3G9QRCtAm0z4ABfe",ck:"3G9QRCtAm0z4ABfe"});
     </script>
 
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 作者信息 */
+        .profile {
+            text-align: center;
+            padding: 40px 0;
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* 作品展示 */
+        .works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .work-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 联系方式 */
+        .contact {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #2c3e50;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin: 0 0 10px 0;
+            }
+        }
+    </style>
+
+
 </head>
 
 
 
 
 <body class="page-body boxed-container">
-    <main role="main" class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">关于作者</h1>
-        <div class="content">
-            <br/>
-<p>大家好，我叫横牫，来自于浙江，互联网资源收集爱好者。</p>
-<p>微信公众号：指尖看世界</p>
-<p>微信小程序：指尖看工具</p>
-<br/>
-<h4 id="联系方式">联系方式</h4>
-<ul>
-<li>横牫: 912964869（QQ）</li>	
-<li>公众号: 指尖看世界(微信)</li>
-<li>Github: <a href="https://github.com/zhijiantv">开源仓库</a></li>
-<li>个人主页: <a href="https://link3.cc/zhijiantv">指尖发布页</a></li>
-</ul>
+        <!-- 关于作者 -->
+        <section class="profile">
+            <img src="https://gitee.com/zhijiantv/zhijianbox/raw/master/logo.jpg" alt="开发者头像" class="avatar">
+            <h1>横牫</h1>
+            <p>大家好，我叫横牫，来自于浙江，互联网资源收集爱好者。</p>
+        </section>
 
-        </div>
+        <!-- 旗下作品 -->
+        <section class="works">
+            <div class="work-card">
+                <h3>微信公众号</h3>
+                <p>微信搜索：指尖看世界</p>
+            </div>
+            <div class="work-card">
+                <h3>微信小程序</h3>
+                <p>微信搜索：指尖看工具</p>
+            </div>
+            <!-- 添加更多作品 -->
+        </section>
+
+        <!-- 联系方式 -->
+        <section class="contact">
+            <h2>联系我们</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fab fa-qq contact-icon"></i>
+                    <div>
+                        <h3>QQ</h3>
+                        <p>912964869</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-weixin contact-icon"></i>
+                    <div>
+                        <h3>微信公众号</h3>
+                        <p>指尖看世界</p>
+                    </div>
+                </div>
+
+                <a href="https://github.com/zhijiantv" class="contact-item" target="_blank">
+                    <i class="fab fa-github contact-icon"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>指尖仓库</p>
+                    </div>
+                </a>
+
+                <a href="https://link3.cc/zhijiantv" class="contact-item" target="_blank">
+                    <i class="fas fa-globe contact-icon"></i>
+                    <div>
+                        <h3>个人主页</h3>
+                        <p>指尖发布页</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </div>
-    </main>
-
-    <style>
-        .content {
-            font-size: 1.25rem;
-          }
-
-          .content h1,
-          .content h2,
-          .content h3,
-          .content h4 {
-            margin: 15px 10px 5px;
-          }
-
-    </style>
 
         <footer class="main-footer footer-type-1 text-xs">
             <div id="footer-tools" class="d-flex flex-column">
@@ -94,8 +231,8 @@
                 </a>
 
             </div>
-            <div class="footer-inner">
-                <div class="footer-text">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系QQ：912964869<br/>© 2025 By <a href="https://github.com/geeeeeeeek/web_tool">Web_tool</a> | <a href="https://link3.cc/zhijiantv">指尖看世界</a><br/></div>
+            <div class="container">
+                <div class="profile">本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系QQ：912964869<br/>© 2025 By <a href="https://github.com/geeeeeeeek/web_tool">Web_tool</a> | <a href="https://link3.cc/zhijiantv">指尖看世界</a><br/></div>
             </div>
         </footer>
     </div>
