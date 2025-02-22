@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告内容 - 指尖看世界</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://lib.baomitu.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css">	
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* 图片区块 */
+        .image-box {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 正文区块 */
+        .content-box {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            background: white;
+        }
+
+        .content-header {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .content-title {
+            color: #2b2d42;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            color: #6c757d;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item i {
+            color: #4a4e69;
+        }
+
+        .article-content {
+            color: #495057;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .image-title {
+                font-size: 1.5rem;
+            }
+            
+            .image-box img {
+                height: 250px;
+            }
+            
+            .content-title {
+                font-size: 1.4rem;
+            }
+        }
+		
+        /* 原网页样式保留 */
+        .image-container, .content-container {
+            border: 2px solid #e0e0e0;  /* 保持与原网页一致的边框宽度  */
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        /* 新增删除按钮样式 */
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.1em;
+            padding: 0 8px;
+            transition: color 0.3s;
+        }
+
+        .delete-btn:hover {
+            color: #c0392b;
+        }
+
+        .comment-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        /* 调整原留言板样式 */
+        .comment-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        /* 新增留言板样式 */
+        .comment-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .comment-form {
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #e0e0e0;  /* 保持与原网页一致的2px边框  */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .comment-list {
+            border: 2px solid #e0e0e0;  /* 保持边框一致性  */
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #fff;
+        }
+
+        .comment-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .comment-section {
+                padding: 0 10px;
+            }
+            .form-input {
+                font-size: 14px;
+            }
+        }		
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 图片区块 -->
+        <div class="image-box">
+            <h1 class="image-title">— —  公告  — —</h1>
+            <img src="https://picsum.photos/1200/600" alt="— —  公告  — —">
+        </div>
+
+        <!-- 正文区块 -->
+        <div class="content-box">
+            <div class="content-header">
+                <h2 class="content-title">📢指尖_网址导航：公告内容</h2>
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>2025-02-22</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>横牫</span>
+                    </div>
+                </div>
+            </div>
+
+<p><strong>常用工具</strong><br>已加入DeepSeek满血版!</p>
+<br>
+<br>
+<p><strong>TVBOX接口</strong><br>新增FuLi资源采集网！<br>并且聚合了接口，请搭配TVBOX低调使用!</p>
+<br>
+<br>
+<p>😘😘😘<br>感谢使用指尖_网址导航！<br>有问题请留言！<br>最新网址：https://zhijiantv.netlify.app/</p>
+           
+        </div>
+    </div>	
+
+
+<div class="container">
+     <div class="content-box">
+    <!-- 修改后的留言板 -->
+    <div class="comment-section">
+        <div class="comment-list" id="commentList"></div>
+        
+        <form class="comment-form" id="commentForm">
+            <input type="text" class="form-input" 
+                   placeholder="昵称（必填）" id="userName" required>
+            <textarea class="form-input" 
+                     rows="4" placeholder="输入留言内容..." 
+                     id="userContent" required></textarea>
+            <button type="submit" class="submit-btn">发布留言</button>
+        </form>
+    </div>
+
+    <script>
+        // 修改后的完整脚本
+        let comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('userName').value.trim();
+            const content = document.getElementById('userContent').value.trim();
+
+            if (name && content) {
+                const newComment = {
+                    id: Date.now(),
+                    name: name,
+                    content: content,
+                    time: new Date().toLocaleString('zh-CN', { 
+                        year: 'numeric', 
+                        month: '2-digit', 
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+
+                comments.unshift(newComment);
+                localStorage.setItem('comments', JSON.stringify(comments));
+                renderComments();
+                this.reset();
+            }
+        });
+
+        // 更新后的渲染函数
+        function renderComments() {
+            const list = document.getElementById('commentList');
+            list.innerHTML = comments.map(comment => `
+                <div class="comment-item" data-id="${comment.id}">
+                    <div class="comment-meta">
+                        <div>
+                            <strong>${sanitize(comment.name)}</strong>
+                            <small style="margin-left:10px;color:#95a5a6;">${comment.time}</small>
+                        </div>
+                        <button class="delete-btn" title="删除留言">×</button>
+                    </div>
+                    <div class="comment-content">${sanitize(comment.content)}</div>
+                </div>
+            `).join('');
+
+            // 绑定删除事件
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if(confirm('确定要永久删除这条留言吗？')) {
+                        const itemId = parseInt(this.closest('.comment-item').dataset.id);
+                        comments = comments.filter(c => c.id !== itemId);
+                        localStorage.setItem('comments', JSON.stringify(comments));
+                        renderComments();
+                    }
+                });
+            });
+        }
+
+        // XSS防护函数
+        function sanitize(text) {
+            return text.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        // 初始化
+        renderComments();
+    </script>
+	
+        </div>
+    </div>	
+	
+	<div class="about" style="text-align:center;font-family:Consolas,Monaco,monospace;font-size:13px;">Copyright &copy;
+		2025 <a href="https://zhijiantv.netlify.app/">指尖看世界</a> 低调使用 </div>
+	
+</body>
+</html>
