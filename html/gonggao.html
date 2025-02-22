@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>公告内容 - 指尖看世界</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="https://lib.baomitu.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="https://lib.baomitu.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css">		
     <style>
+        /* 基础重置 */
         * {
             margin: 0;
             padding: 0;
@@ -14,18 +15,20 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
+            color: #333;
             background-color: #f8f9fa;
         }
 
+        /* 主容器 */
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 15px;
         }
 
-        /* 图片区块 */
+         /* 图片区块 */
         .image-box {
             border: 2px solid #dee2e6;
             border-radius: 10px;
@@ -99,22 +102,63 @@
             text-indent: 2em;
         }
 
-		
-        /* 原网页样式保留 */
-        .image-container, .content-container {
-            border: 2px solid #e0e0e0;  /* 保持与原网页一致的边框宽度  */
-            border-radius: 8px;
-            margin: 20px auto;
-            max-width: 800px;
+        /* 留言板系统 */
+        .comment-system {
+            margin: 50px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        /* 新增删除按钮样式 */
+
+        .comment-list {
+            padding: 25px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .comment-form {
+            padding: 25px;
+        }
+
+        /* 留言项样式 */
+        .comment-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .comment-author {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .comment-time {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        .comment-content {
+            color: #34495e;
+            line-height: 1.6;
+        }
+
         .delete-btn {
             background: none;
             border: none;
             color: #e74c3c;
             cursor: pointer;
-            font-size: 1.1em;
-            padding: 0 8px;
+            padding: 5px;
+            font-size: 1.2em;
             transition: color 0.3s;
         }
 
@@ -122,76 +166,52 @@
             color: #c0392b;
         }
 
-        .comment-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        /* 调整原留言板样式 */
-        .comment-item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            position: relative;
-        }
-        /* 新增留言板样式 */
-        .comment-section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
-
-        .comment-form {
-            background: #fff;
-            padding: 20px;
-            border: 2px solid #e0e0e0;  /* 保持与原网页一致的2px边框  */
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
+        /* 表单样式 */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-input {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 16px;
         }
 
+        .form-input:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+        }
+
         .submit-btn {
+            width: 100%;
+            padding: 14px;
             background: #3498db;
             color: white;
-            padding: 12px 25px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
+            font-size: 16px;
             cursor: pointer;
             transition: background 0.3s;
         }
 
-        .comment-list {
-            border: 2px solid #e0e0e0;  /* 保持边框一致性  */
-            border-radius: 8px;
-            margin: 20px 0;
-            padding: 15px;
-            background: #fff;
-        }
-
-        .comment-item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+        .submit-btn:hover {
+            background: #2980b9;
         }
 
         /* 手机端适配 */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 0 10px;
             }
 
-            .comment-form {
+            .landscape-section {
+                padding: 15px;
+                margin: 20px 0;
+            }
+
+            .comment-item {
                 padding: 15px;
             }
 
@@ -206,25 +226,17 @@
             }
 
             .comment-author {
-                font-size: 14px;
+                font-size: 1em;
             }
 
             .comment-time {
-                font-size: 12px;
+                font-size: 0.8em;
             }
-
-            .comment-content {
-                font-size: 14px;
-            }
-
-            .delete-btn {
-                font-size: 1.1em;
-                padding: 0 6px;
-            }
-        }		
+        }
     </style>
 </head>
 <body>
+    <!-- 自然景观展示 -->
     <div class="container">
         <!-- 图片区块 -->
         <div class="image-box">
@@ -259,29 +271,41 @@
         </div>
     </div>	
 
+    <!-- 留言板系统 -->
+    <div class="container">
+        <div class="comment-system">
+            <!-- 留言列表 -->
+            <div class="comment-list" id="commentList"></div>
 
-<div class="container">
-     <div class="content-box">
-    <!-- 修改后的留言板 -->
-    <div class="comment-section">
-        <div class="comment-list" id="commentList"></div>
-        
-        <form class="comment-form" id="commentForm">
-            <input type="text" class="form-input" 
-                   placeholder="昵称（必填）" id="userName" required>
-            <textarea class="form-input" 
-                     rows="4" placeholder="输入留言内容..." 
-                     id="userContent" required></textarea>
-            <button type="submit" class="submit-btn">发布留言</button>
-        </form>
+            <!-- 留言表单 -->
+            <form class="comment-form" id="commentForm">
+                <div class="form-group">
+                    <input type="text" 
+                           class="form-input" 
+                           placeholder="您的昵称（必填）" 
+                           id="userName" 
+                           required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-input" 
+                              rows="4" 
+                              placeholder="写下您的留言..." 
+                              id="userContent" 
+                              required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">发布留言</button>
+            </form>
+        </div>
     </div>
 
     <script>
-        // 修改后的完整脚本
+        // 留言系统功能
         let comments = JSON.parse(localStorage.getItem('comments')) || [];
 
+        // 表单提交
         document.getElementById('commentForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const name = document.getElementById('userName').value.trim();
             const content = document.getElementById('userContent').value.trim();
 
@@ -290,9 +314,9 @@
                     id: Date.now(),
                     name: name,
                     content: content,
-                    time: new Date().toLocaleString('zh-CN', { 
-                        year: 'numeric', 
-                        month: '2-digit', 
+                    time: new Date().toLocaleString('zh-CN', {
+                        year: 'numeric',
+                        month: '2-digit',
                         day: '2-digit',
                         hour: '2-digit',
                         minute: '2-digit'
@@ -306,15 +330,15 @@
             }
         });
 
-        // 更新后的渲染函数
+        // 渲染留言
         function renderComments() {
             const list = document.getElementById('commentList');
             list.innerHTML = comments.map(comment => `
                 <div class="comment-item" data-id="${comment.id}">
-                    <div class="comment-meta">
+                    <div class="comment-header">
                         <div>
-                            <strong>${sanitize(comment.name)}</strong>
-                            <small style="margin-left:10px;color:#95a5a6;">${comment.time}</small>
+                            <span class="comment-author">${sanitize(comment.name)}</span>
+                            <span class="comment-time">${comment.time}</span>
                         </div>
                         <button class="delete-btn" title="删除留言">×</button>
                     </div>
@@ -325,7 +349,7 @@
             // 绑定删除事件
             document.querySelectorAll('.delete-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    if(confirm('确定要永久删除这条留言吗？')) {
+                    if(confirm('确定要删除这条留言吗？')) {
                         const itemId = parseInt(this.closest('.comment-item').dataset.id);
                         comments = comments.filter(c => c.id !== itemId);
                         localStorage.setItem('comments', JSON.stringify(comments));
@@ -335,23 +359,21 @@
             });
         }
 
-        // XSS防护函数
+        // 安全过滤
         function sanitize(text) {
             return text.toString()
                 .replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;");
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
 
         // 初始化
         renderComments();
     </script>
-	
-        </div>
-    </div>	
-	
+
 	<div class="about" style="text-align:center;font-family:Consolas,Monaco,monospace;font-size:13px;">Copyright &copy;
-		2025 <a href="https://zhijiantv.netlify.app/">指尖看世界</a> 低调使用 </div>
-	
+		2025 <a href="https://zhijiantv.netlify.app/">指尖看世界</a> 低调使用 </div>	
 </body>
 </html>
