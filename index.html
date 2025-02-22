@@ -30,7 +30,7 @@
     <script type="text/javascript" src="./assets/js/jquery.min-3.2.1.js" id="jquery-js"></script>
     <script type="text/javascript" src="./assets/js/content-search.js"  id="content-search-js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel='stylesheet' id='iconfontd-css' href='https://at.alicdn.com/t/font_2768144_khli9xs79g.css' type='text/css' media='all'>
 
 
      <script>
@@ -597,7 +597,29 @@
             </div>
         </div>
     </div>
-
+<!-- 在搜索框下方添加这个公告容器 -->	
+	                <div class="bulletin-big mx-3 mx-md-0">
+                    <div id="bulletin_box" class="card my-2">
+                        <div class="card-body py-1 px-2 px-md-3 d-flex flex-fill text-xs text-muted">
+                            <div><i class="iconfont icon-laba font-size:26px" style="line-height:25px"></i></div>
+                            <div class="bulletin mx-1 mx-md-2 carousel-vertical">
+                                <div class="carousel slide" data-ride="carousel" data-interval="3000">
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active"><a class="overflowClip_1" href=".html/gonggao.html" target="_blank">📢指尖_网址导航 -
+                                                最新公告内容（25/02/22）</a></div>
+                                        <div class="carousel-item "><a class="overflowClip_1" href="https://link3.cc/zhijiantv" target="_blank">📢指尖_网址导航 -
+                                                最新发布页</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-fill"></div>
+                            <a title="关闭" href="javascript:;" rel="external nofollow" class="bulletin-close"
+                                onclick="$('#bulletin_box').slideUp('slow');"><i class="iconfont icon-searchclose"
+                                    style="line-height:25px"></i></a>
+                        </div>
+                    </div>
+                </div>
+<!-- 在搜索框下方添加这个公告容器 -->
 </div>
 
 
