@@ -185,18 +185,41 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .image-title {
-                font-size: 1.5rem;
+        /* 手机端适配 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
             }
-            
-            .image-box img {
-                height: 250px;
+
+            .comment-form {
+                padding: 15px;
             }
-            
-            .content-title {
-                font-size: 1.4rem;
+
+            .form-input {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .submit-btn {
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            .comment-author {
+                font-size: 14px;
+            }
+
+            .comment-time {
+                font-size: 12px;
+            }
+
+            .comment-content {
+                font-size: 14px;
+            }
+
+            .delete-btn {
+                font-size: 1.1em;
+                padding: 0 6px;
             }
         }		
     </style>
